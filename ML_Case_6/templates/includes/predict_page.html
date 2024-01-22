@@ -1,0 +1,101 @@
+<div class="container">
+    {% if predicts %}
+    {% for predict in predicts %}
+    <br>
+    <hr>
+    <hr>
+    <br>
+    <div class="container-table">
+        <div class="container-table-item">
+            <div class="sidebar">
+                <h3>Номер предсказания (case_id): <strong>{{ predict.case_id }}</strong></h3>
+                <p>Указанная дата рождения на момент предсказания: <strong>{{ predict.date_birth }}</strong></p>
+                <p>Дата предсказания: <strong>{{ predict.date_diagnosis }}</strong></p>
+                <p>Пол: <strong>{{ predict.gender }}</strong></p>
+                <p>Тип LGG/GBR: <strong>{{ predict.grade }}</strong></p>
+                <p>Стоимость предсказания: <strong>{{ predict.price }}</strong></p>
+            </div>
+            <div class="content">
+                <table class="small-table">
+                    <tr>
+                        <th>Модель обучения</th>
+                        <th>Точность (accuracy)</th>
+                        <th>Точность (precision)</th>
+                        <th>Отзыв</th>
+                        <th>Оценка</th>
+                    </tr>
+                    {% for ml, values in predict.report_dict.items() %}
+                    <tr>
+                        {% if ml == 'svm_linear' %}
+                        <td>Линейное</td>
+                        {% elif ml == 'svm_poly' %}
+                        <td>Полиномиальное</td>
+                        {% elif ml == 'svm_rbf' %}
+                        <td>Гаусс</td>
+                        {% elif ml == 'svm_sigmoid' %}
+                        <td>Сигмовидное</td>
+                        {% elif ml == 'random_forest' %}
+                        <td>Случайное дерево</td>
+                        {% endif %}
+
+                        {% for key, value in values.items() %}
+                        <td>{{ value }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+        <table class="large-table">
+            <tr>
+                <th>IDH1</th>
+                <th>TP53</th>
+                <th>ATRX</th>
+                <th>PTEN</th>
+                <th>EGRF</th>
+                <th>CIC</th>
+                <th>MUC16</th>
+                <th>PIK3CA</th>
+                <th>NF1</th>
+                <th>PIC3R1</th>
+                <th>FUBP1</th>
+                <th>RB1</th>
+                <th>NOTCH1</th>
+                <th>BCOR</th>
+                <th>CSMD3</th>
+                <th>SMARCA4</th>
+                <th>GRIN2A</th>
+                <th>IDH2</th>
+                <th>FAT4</th>
+                <th>PDGFRA</th>
+            </tr>
+            <tr>
+                <td>{{ predict.tp53 }}</td>
+                <td>{{ predict.idh1 }}</td>
+                <td>{{ predict.atrx }}</td>
+                <td>{{ predict.pten }}</td>
+                <td>{{ predict.egrf }}</td>
+                <td>{{ predict.cic }}</td>
+                <td>{{ predict.muc16 }}</td>
+                <td>{{ predict.pik3ca }}</td>
+                <td>{{ predict.nf1 }}</td>
+                <td>{{ predict.pic3r1 }}</td>
+                <td>{{ predict.fubp1 }}</td>
+                <td>{{ predict.rb1 }}</td>
+                <td>{{ predict.notch1 }}</td>
+                <td>{{ predict.bcor }}</td>
+                <td>{{ predict.csmd3 }}</td>
+                <td>{{ predict.smarca4 }}</td>
+                <td>{{ predict.grin2a }}</td>
+                <td>{{ predict.idh2 }}</td>
+                <td>{{ predict.fat4 }}</td>
+                <td>{{ predict.pdgfra }}</td>
+            </tr>
+        </table>
+    </div>
+    {% endfor %}
+    {% else %}
+    <h3>Не было совершено ни одного предсказания.</h3>
+    {% endif %}
+
+</div>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Предыдущие предсказания пользователя</title>
+    <script src="{{ url_for('static', path='predicts.js') }}"></script>
+    <script src="{{ request.url_for('static', path='back_account.js') }}"></script>
+
+    <style>
+        h2 {
+            text-align: center;
+        }
+
+        .container-table {
+            margin-bottom: 100px;
+        }
+
+        .container-table-item {
+            display: flex;
+        }
+
+        .sidebar {
+            flex-basis: 25%;
+        }
+
+        .content {
+            flex-basis: 75%;
+        }
+
+        .small-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .small-table th,
+        .small-table td {
+            padding: 8px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        .small-table th {
+            background-color: #f2f2f2;
+        }
+
+        .large-table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        .large-table th,
+        .large-table td {
+            font-size: 12px;
+            padding: 12px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        .large-table th {
+            background-color: #f2f2f2;
+        }
+
+        .buttons button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            color: #555;
+            padding: 20px;
+        }
+
+        .buttons button:hover {
+            text-decoration: underline;
+        }
+
+        .buttons button:focus {
+            outline: none;
+        }
+
+        hr {
+            border-color: #333333;
+            font-weight: bold;
+        }
+
+    </style>
+
+</head>
+<body>
+<h2>Получение предсказания диагноза LGG/GBR</h2>
+<div class="buttons">
+    <button id="backAccount">В личный кабинет</button>
+    <button id="backPredictForm">Сделать новое предсказание</button>
+</div>
+
+<div id="tableContainer">
+</div>
+</body>
+</html>

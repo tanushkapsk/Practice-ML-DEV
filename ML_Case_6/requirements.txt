@@ -1,0 +1,9 @@
+fastapi
+pandas
+uvicorn
+sqlalchemy
+pyjwt
+passlib
+python-jose
+python-multipart
+jinja2

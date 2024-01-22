@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Главная страница</title>
+    <!--    <script src="{{ request.url_for('static', path='main.js') }}"></script>-->
+    <script src="{{ request.url_for('static', path='user_data.js') }}"></script>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .title {
+            font-size: 36px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 100px;
+            text-align: center;
+        }
+
+        .text {
+            font-size: 18px;
+            color: #555;
+            margin: 20px 300px 20px 300px;
+            text-align: center;
+        }
+
+        .text-left {
+            text-align: left;
+        }
+
+        .text-error {
+            color: #a23a3d;
+            margin-top: 100px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .buttons button {
+            background-color: transparent;
+            border: 2px solid #333;
+            border-radius: 4px;
+            padding: 10px 120px;
+            font-size: 16px;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .buttons button:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .buttons button:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+<div class="container" id="container">
+    <h1 class="title">Получение классификации глиомы LGG/GBR</h1>
+    <p class="text">
+        Глиомы, включая LGG и GBR, классифицируются на основе их морфологических, гистологических и
+        молекулярных характеристик. Диагноз и классификация глиомы осуществляются путем гистологического анализа
+        биоптата или хирургического образца опухоли, а также молекулярных тестов.</p>
+    <p class="text">
+        Мутационный профиль глиомы может варьироваться в зависимости от индивидуального случая и специфических
+        молекулярных аномалий. Классификация на основе мутаций помогает в определении подтипов глиомы и может иметь
+        значение для прогнозирования и выбора подходящих терапевтических стратегий.
+    </p>
+</div>
+</body>
+</html>

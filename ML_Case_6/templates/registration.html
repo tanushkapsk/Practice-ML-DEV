@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>регистрация</title>
+    <script src="{{ url_for('static', path='registration.js') }}"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f1f1f1;
+        }
+
+        .container {
+            display: flex;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 2px solid #333;
+            border-radius: 10px;
+            background-color: #fff;
+            width: 100%;
+        }
+
+        .form-container {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .text-container {
+            flex: 1;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 94%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .form-group select {
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .form-group .btn-submit:hover {
+            background-color: #45a049;
+        }
+
+        .form-group .btn-submit {
+            background-color: transparent;
+            border: 2px solid #333;
+            padding: 10px;
+            border-radius: 4px;
+            width: 100%;
+            font-size: 16px;
+            color: #333;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .form-group .btn-submit:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .form-group .btn-submit:focus {
+            outline: none;
+        }
+
+        .text-block {
+            color: #555;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="form-container">
+        <h2>регистрация</h2>
+        <form id="RegisterForm" action="/register" method="post">
+            <div class="form-group">
+                <label for="username">Пароль:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <div class="form-group">
+                <label for="first_name">Имя:</label>
+                <input type="text" id="first_name" name="first_name" required>
+            </div>
+            <div class="form-group">
+                <label for="last_name">Фамилия:</label>
+                <input type="text" id="last_name" name="last_name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="date_birth">Дата рождения:</label>
+                <input type="date" id="date_birth" name="date_birth" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Пол (gender):</label>
+                <select id="gender" name="gender">
+                    <option value="0">MALE</option>
+                    <option value="1">FEMALE</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="race">Раса (race):</label>
+                <select id="race" name="race">
+                    <option value="0">WHITE</option>
+                    <option value="1">BLACK OR AFRICAN AMERICAN</option>
+                    <option value="2">ASIAN</option>
+                    <option value="3">AMERICAN INDIAN OR ALASKA NATIVE</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Войти" class="btn-submit">
+            </div>
+        </form>
+    </div>
+    <div class="text-container">
+        <div class="text-block">
+            <p>Здесь вы можете зарегистрироваться, чтобы получить доступ к нашим услугам.</p>
+            <p>У вас будет доступ к получению классификации глиомы мозга на основе переданных вами данных о мутировании
+                различных признаков.</p>
+            <p>Данные, что вы вводите (дата рождения, пол, раса), будут подставлены автоматически в форму для
+                предсказания классификации глиомы, но
+                вы их можете поменять.</p>
+            <p>Также у вас будет доступ к предыдущим предсказаниям со всей статистикой.</p>
+            <p>После успешной регистрации вас перенаправит на страницу авторизации, чтобы подтвердить вход.</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
